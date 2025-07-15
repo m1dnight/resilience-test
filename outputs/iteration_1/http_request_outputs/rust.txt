@@ -1,0 +1,24 @@
+* Host localhost:4000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:4000...
+* connect to ::1 port 4000 from ::1 port 55498 failed: Connection refused
+*   Trying 127.0.0.1:4000...
+* Connected to localhost (127.0.0.1) port 4000
+> GET / HTTP/1.1
+> Host: localhost:4000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< content-type: application/json
+< content-length: 17
+< date: Fri, 18 Jul 2025 08:34:00 GMT
+< 
+{ [17 bytes data]
+100    17  100    17    0     0  20556      0 --:--:-- --:--:-- --:--:-- 17000
+* Connection #0 to host localhost left intact
+{"response":"ok"}
