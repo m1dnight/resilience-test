@@ -1,0 +1,24 @@
+* Host localhost:4000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:4000...
+* Connected to localhost (::1) port 4000
+> GET / HTTP/1.1
+> Host: localhost:4000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Date: Fri, 18 Jul 2025 08:33:54 GMT
+< Content-Length: 24
+< 
+{ [24 bytes data]
+100    24  100    24    0     0  24767      0 --:--:-- --:--:-- --:--:-- 24000
+* Connection #0 to host localhost left intact
+{
+    "Response": "ok"
+}

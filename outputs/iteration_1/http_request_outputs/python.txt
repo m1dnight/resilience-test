@@ -1,0 +1,23 @@
+* Host localhost:4000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:4000...
+* Connected to localhost (::1) port 4000
+> GET / HTTP/1.1
+> Host: localhost:4000
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 18
+< Date: Fri, 18 Jul 2025 08:33:59 GMT
+< Server: Python/3.13 aiohttp/3.12.14
+< 
+{ [18 bytes data]
+100    18  100    18    0     0  16528      0 --:--:-- --:--:-- --:--:-- 18000
+* Connection #0 to host localhost left intact
+{"response": "ok"}

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+cd -P -- "$(dirname -- "$0")"
+exec ./loady_mc_loadface eval LoadyMcLoadface.Release.migrate
