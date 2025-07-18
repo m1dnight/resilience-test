@@ -3,7 +3,6 @@
 set +a
 source ./.env
 set -a
-echo $APP_RUNNER
 
 host="${APP_RUNNER_USER}@${APP_RUNNER}"
 endpoint="http://${APP_RUNNER}:4000"

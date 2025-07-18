@@ -1,9 +1,13 @@
 #!/bin/bash
 
+
+set +a
+source ./.env
+set -a
+
+
 #----------------------------------------------------------------------------
 # Upload to runner
-
-runner=root@34.51.220.94
 
 rsync -rav --progress \
     --filter=':- applications/elixir/loady_mc_loadface/.gitignore' \
@@ -12,4 +16,4 @@ rsync -rav --progress \
     --filter=':- applications/python/loady_mc_loadface/.gitignore' \
     --filter=':- applications/rust/loady_mc_loadface/.gitignore' \
     --exclude '.git' \
-    "${runner}:~/benchmarks/k6/" k6
+    "${K6_RUNNER_USER}@${K6_RUNNER}:~/benchmarks/k6/" k6
