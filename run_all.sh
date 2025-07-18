@@ -1,6 +1,12 @@
 #!/bin/bash
-host=root@34.51.220.94
-endpoint=http://34.51.220.94:4000
+
+set +a
+source ./.env
+set -a
+echo $APP_RUNNER
+
+host="${APP_RUNNER_USER}@${APP_RUNNER}"
+endpoint="http://${APP_RUNNER}:4000"
 
 #----------------------------------------------------------------------------
 # Helper functions
