@@ -3,7 +3,10 @@
 #----------------------------------------------------------------------------
 # Upload to the webserver
 
-host=root@34.51.220.94
+set +a
+source ./.env
+set -a
+
 
 rsync -rav --progress \
     --filter=':- applications/elixir/loady_mc_loadface/.gitignore' \
@@ -12,14 +15,12 @@ rsync -rav --progress \
     --filter=':- applications/python/loady_mc_loadface/.gitignore' \
     --filter=':- applications/rust/loady_mc_loadface/.gitignore' \
     --exclude '.git' \
-    . "${host}:~/benchmarks"
+    . "${APP_RUNNER_USER}@${APP_RUNNER}:~/benchmarks"
 
 
 #----------------------------------------------------------------------------
 # Upload to test runner
 
-runner=root@91.99.163.65
-
 rsync -rav --progress \
     --filter=':- applications/elixir/loady_mc_loadface/.gitignore' \
     --filter=':- applications/golang/loady_mc_loadface/.gitignore' \
@@ -27,4 +28,4 @@ rsync -rav --progress \
     --filter=':- applications/python/loady_mc_loadface/.gitignore' \
     --filter=':- applications/rust/loady_mc_loadface/.gitignore' \
     --exclude '.git' \
-    . "${runner}:~/benchmarks"
+    . "${K6_RUNNER_USER}@${K6_RUNNER}:~/benchmarks"
