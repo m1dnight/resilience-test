@@ -12,4 +12,4 @@ rsync -rav --progress \
     --filter=':- applications/python/loady_mc_loadface/.gitignore' \
     --filter=':- applications/rust/loady_mc_loadface/.gitignore' \
     --exclude '.git' \
-    "${runner}:~/benchmarks/" .
+    "${runner}:~/benchmarks/k6/" k6
