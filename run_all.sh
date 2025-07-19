@@ -28,7 +28,7 @@ function benchmark() {
     lang=$1
     cd k6
     # K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT="${lang}.html" k6 run --out json="${lang}.json" script.js
-    K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT="../outputs/iteration_1/reports/${lang}.html" k6 run  script.js
+    K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT="../outputs/iteration_${ITER}/reports/${lang}.html" k6 run  script.js
     cd -
 }
 
@@ -71,5 +71,11 @@ kill_all
 ssh -f "${host}" 'nohup /root/benchmarks/applications/rust/run.sh > /dev/null & disown'
 wait_online
 benchmark "rust"
+
+# Js
+kill_all
+ssh -f "${host}" 'nohup /root/benchmarks/applications/js/run.sh > /dev/null & disown'
+wait_online
+benchmark "js"
 
 kill_all

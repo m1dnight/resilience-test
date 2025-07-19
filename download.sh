@@ -16,4 +16,4 @@ rsync -rav --progress \
     --filter=':- applications/python/loady_mc_loadface/.gitignore' \
     --filter=':- applications/rust/loady_mc_loadface/.gitignore' \
     --exclude '.git' \
-    "${K6_RUNNER_USER}@${K6_RUNNER}:~/benchmarks/k6/" k6
+    "${K6_RUNNER_USER}@${K6_RUNNER}:~/benchmarks/outputs/" outputs
